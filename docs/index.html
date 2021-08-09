@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+    File: index.html
+    GUIAssignment:  Creating an Interactive Dynamic Table
+    Haley Santomas, UMass Lowell Computer Science, haley_santomas@student.uml.edu
+    Date: 8/5/2021
+    Summary: This page uses Javascript to display a dynamic multiplication table based on the user inputs in the form. Additionally, it uses JQuery for validation purposes.
+-->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Multiplication Table</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    </head>
+    <body>
+        <!-- The main div. -->
+        <div id="div_wrapper">
+            <!-- The form. -->
+            <form id="form_submission">
+                <table id="tableForm">
+                    <tr>
+                        <td>
+                            <label class="label_form">Row Max</label>
+                        </td>
+                        <td>
+                            <input type="number" id="rowMax" name="rowMax" placeholder="#">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Row Min</label>
+                        </td>
+                        <td>
+                            <input type="number" id="rowMin" name="rowMin" placeholder="#">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Column Max</label>
+                        </td>
+                        <td>
+                            <input type="number" id="colMax" name="colMax" placeholder="#">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="label_form">Column Min</label>
+                        </td>
+                        <td>
+                            <input type="number" id="colMin" name="colMin" placeholder="#">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <!-- Return false to prevent automatic refresh of page. -->
+                            <input type="submit" id="submitButton" name="submitButton" value="Create Table" onclick="submitForm(); return false;">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
+            <!-- The error message. -->
+            <div class="errorMessage">
+                <h3 class="errorMessage">ERROR</h3>
+                <p class="errorMessage" id="errorMessageText"></p>
+            </div>
+
+            <!-- The submission result. -->
+            <table id="tableResult">
+                <!-- This gets filled in with JavaScript. -->
+            </table>
+        </div>
+
+        <!-- Javascript-->
+        <script type="text/javascript" src="javascript/script.js"></script>
+    </body>
+</html>
